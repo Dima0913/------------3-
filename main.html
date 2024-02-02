@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .clock {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 10px solid #a200ff;
+            border-radius: 50%;
+        }
+
+        .hour,
+        .minute,
+        .second {
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background-color: #ff0000;
+            top: 50%;
+            transform-origin: 100%;
+            animation-duration: 3600s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .minute {
+            height: 1.5px;
+            background-color: #0026ff;
+            animation-duration: 3600s;
+        }
+
+        .second {
+            height: 1px;
+            background-color: rgb(225, 0, 255);
+            animation-duration: 60s;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(90deg);
+            }
+
+            to {
+                transform: rotate(450deg);
+            }
+        }
+
+        .hour {
+            animation-name: rotate;
+        }
+
+        .minute {
+            animation-name: rotate;
+        }
+
+        .second {
+            animation-name: rotate;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+    </div>
+</body>
+
+</html>

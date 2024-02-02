@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блоки з текстом і зображенням</title>
+    <style>
+        .block {
+            display: flex;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ccc;
+            transition: background-color 0.3s;
+        }
+
+        .block:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .text-container,
+        .image-container {
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text-container p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+            margin: 0;
+            padding: 10px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 1s;
+        }
+
+        .block:hover .image-container img {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block">
+        <div class="text-container">
+            <p>це я >>>>>>>>>>></p>
+        </div>
+        <div class="image-container">
+            <img src="img/8ae7f82e71491713d4f923aa33798b91_w640.jpg" alt="Зображення">
+        </div>
+    </div>
+    <div class="block">
+        <div class="image-container">
+            <img src="img/two-goats-facing-each-other-face_23-2148290997.avif" alt="Зображення">
+        </div>
+        <div class="text-container">
+            <p>
+                <це ми</p>
+        </div>
+    </div>
+    <div class="block">
+        <div class="text-container">
+            <p>Це Свят >>>>>>></p>
+        </div>
+        <div class="image-container">
+            <img src="img/Фрэнк_500.jpg" alt="Зображення">
+        </div>
+    </div>
+</body>
+
+</html>

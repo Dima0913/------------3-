@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .door-container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            perspective: 800px;
+        }
+
+        .door {
+            border: 5px solid violet;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #9900ff;
+            transform-origin: left center;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .door-container:hover .door-left {
+            transform: rotateY(90deg);
+        }
+
+        .door-container:hover .door-right {
+            transform: rotateY(-90deg);
+        }
+
+        .door-left {
+            left: 0;
+        }
+
+        .door-right {
+            right: 0;
+            transform-origin: right center;
+        }
+
+        .text-behind-door {
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000000;
+            font-size: 25px;
+            font-weight: bold;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .door-container:hover .text-behind-door {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="door-container">
+        <div class="door door-left"></div>
+        <div class="door door-right"></div>
+        <div class="text-behind-door">HELLO</div>
+    </div>
+</body>
+
+</html>
